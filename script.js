@@ -51,10 +51,12 @@ sendTelegramMessage('Скрипт успешно запущен!');
                 return Array.from(document.querySelectorAll('[class^="styles_wrapper_"]')).map(wrapper => {
                     const titleElement = wrapper.querySelector('[class^="styles_title_"]');
                     const priceElement = wrapper.querySelector('[class^="styles_price_"]');
+                    const timeElement = wrapper.querySelector('[class^="styles_secondary_"]');
                     const linkElement = wrapper.closest('a');
                     return {
                         title: titleElement ? titleElement.innerText.trim() : null,
                         price: priceElement ? priceElement.innerText.trim() : null,
+                        time: timeElement ? timeElement.innerText.trim() : null,
                         link: linkElement ? linkElement.href : null,
                     };
                 }).filter(ad => ad.title && ad.link && ad.price);
@@ -68,7 +70,7 @@ sendTelegramMessage('Скрипт успешно запущен!');
             if (newEntries.length > 0) {
                 console.log(`[${new Date().toISOString()}] Объявления обновлены! Новые объявления:`);
                 for (const ad of newEntries) {
-                    const message = `Новое объявление:\n- ${ad.title} (${ad.price}): ${ad.link}`;
+                    const message = `Новое объявление:\n- ${ad.title} (${ad.price})\n- Время публикации: ${ad.time}\n- Ссылка: ${ad.link}`;
                     console.log(message);
                     await sendTelegramMessage(message);
                 }
