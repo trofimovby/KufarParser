@@ -16,8 +16,8 @@
 Скачайте или клонируйте репозиторий с вашим скриптом на ваш локальный компьютер:
 
 ```bash
-git clone https://github.com/your-repo-url.git
-cd your-repo-directory
+git https://github.com/trofimovby/KufarParser
+cd KufarParser
 ```
 
 ## Шаг 2: Установка Node.js
