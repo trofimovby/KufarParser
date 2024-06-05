@@ -16,7 +16,7 @@
 Скачайте или клонируйте репозиторий с вашим скриптом на ваш локальный компьютер:
 
 ```bash
-git https://github.com/trofimovby/KufarParser
+git clone https://github.com/trofimovby/KufarParser
 cd KufarParser
 ```
 
